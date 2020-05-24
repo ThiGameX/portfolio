@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+
+	<body>
+
+	<div id="wrapper">
+				
+	<div id="rect1" class="rect"></div>
+	<div id="rect2" class="rect"></div>
+	<div id="rect3" class="rect"></div>
+
+	<div id="container">
+
+		<header id="header">
+			<img src="imgs/logo.png" draggable="false">
+			<ul>
+				<li><a onclick="link('home')" class="home-link">Home</a></li>
+				<li><a onclick="link('projetos')">Projetos</a></li>
+				<li><a onclick="link('php')">PHP</a></li>
+			</ul>
+		</header>
+
+		<section id="bg-img">
+			<img src="imgs/bg-img.png" id="back-img" draggable="false">
+		</section>
+		
+		<div id="foto-img">
+			<img src="imgs/foto.png" id="profile-img">
+		</div>
+
+		<section id="content">
+
+			<h1 class="sobre-h1">Breve descrição</h1>
+			<p class="sobre-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+
+			<h1 class="h1-projetos">Projetos</h1>
+
+			<div id="projs-thumb">
+				<div id="proj" class="proj1">
+					<img src="imgs/projs/proj1.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Dark/light Mode</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+				<div id="proj" class="proj2">
+					<img src="imgs/projs/proj2.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Sistema de login</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+				<div id="proj" class="proj3">
+					<img src="imgs/projs/proj3.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Efeito parallax</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+
+			</div>
+
+			
+			<h1 class="misc">Esclarecimentos finais</h1>
+
+			<div id="misc">
+				<img src="imgs/misc.png">
+				<h1>Sobre mim</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio magni, consequatur minima tempore Omnis laudantium architecto sequi nisi asperiores eaque eveniet perspiciatis laboriosam minus in doloremque iste, itaque culpa, aspernatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis impedit commodi perferendis itaque sunt facere optio saepe modi dolores ipsam nulla, distinctio laborum aut cum omnis, reprehenderit quas libero.</p>
+			</div>
+
+		</section>
+
+	</div>
+
+	<section id="content-projetos">
+		
+		<h1 class="projetos-main-h1">Projetos</h1>
+
+		<div id="projeto1" class="projeto-box">
+			<iframe src="frames/js/projeto1/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Modo escuro/claro</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+		<div id="projeto2" class="projeto-box">
+			<iframe src="frames/js/projeto2/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Sistema de login (com local storage)</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+		<div id="projeto3" class="projeto-box last-project">
+			<iframe src="frames/js/projeto3/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Efeito Parallax</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+	</section>
+	
+	<section id="content-php">
+		
+		<h1 class="php-main-heading">Projetos em PHP</h1>
+
+		<div id="php-projs-container">
+			
+			<div id="php-project">
+				
+				<iframe src="frames/php/projeto1/index.php" frameborder="none"></iframe>
+
+				<h1 class="php-project-title">Titulo do Projeto 1</h1>
+
+				<p class="php-project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+
+			</div>
+
+			<div id="php-project">
+				
+				<iframe src="frames/php/projeto2/index.php" frameborder="none"></iframe>
+
+				<h1 class="php-project-title">Titulo do Projeto 2</h1>
+
+				<p class="php-project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+
+			</div>
+
+		</div>
+		
+	</section>
+
+
+	<script src="js.js"></script>
+	
+	</div>
+
+	</body>
+
+</html>
