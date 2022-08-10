@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Gerenciador de despesas</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- <link rel="stylesheet" type="text/css" href="" id="mobile">
+		<script type="text/javascript">
+			const mobileStyle = document.querySelector("#mobile")
+			function resize(){
+				if (window.outerWidth < 900) {
+					mobileStyle.href = "mobile.css"
+				}else{
+					mobileStyle.innerHTML = ""
+				}
+				console.log(window.outerWidth)
+			}
+			resize()
+		</script> -->
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+			
+			<div id="container">
+				
+				<div id="box-stored-values" class="gray-bg">
+					
+					<h2 class="title">Sua receita</h2>
+
+					<div id="values-container">
+						
+						<div id="stored-saldo" class="values-section">
+							
+							<div>
+								<h3 class="values-heading">Saldo</h3>
+								<h2 id="saldo-value">0</h2>
+							</div>
+
+						</div>
+
+						<div id="stored-ganho" class="values-section">
+							
+							<div>
+								<h3 class="values-heading">Ganho</h3>
+								<h2 id="ganho-value">0</h2>
+							</div>
+
+						</div>
+
+						<div id="stored-despesa" class="values-section">
+						
+							<div>
+								<h3 class="values-heading">Despesas</h3>
+								<h2 id="despesas-value">0</h2>
+							</div>
+
+						</div>
+
+					</div>	
+
+				</div>
+
+
+				<div id="box-add-transacitons" class="gray-bg">
+
+					<h2 class="title">Adicionar Transação</h2>
+					<form action="javascript:void(0)">
+							<fieldset> <legend>Nome</legend>
+								<input type="text"  id="transac-name" placeholder="Nome da transação" autocomplete="off" spellcheck="false">
+							</fieldset>
+
+							<fieldset> <legend>Valor</legend>
+								<input type="number" id="transac-value"  placeholder="Valor da transação">
+							</fieldset>
+
+						<button type="submit" onclick="addTransaction()">Adicionar</button>
+
+					</form>
+				</div>
+
+
+				<div id="box-stored-transacitons" class="gray-bg">
+					
+					<h2 class="title">Transações</h2>
+
+					<div id="transactions-list">
+					
+				<!--	<div class="transactions-item">
+							
+							<div class="transac-info">
+								<h3>Nome transação</h3> <span class="plus">R$50,00</span>
+							</div>
+
+							<span class="close-button" data-amount="10"></span>
+
+						</div> -->
+
+					</div>	
+
+				</div>		
+
+			</div>
+
+			<script src="js.js"></script>
+		
+		</div>
+
+	</body>
+
+</html>

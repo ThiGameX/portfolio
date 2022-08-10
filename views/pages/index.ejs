@@ -1,66 +1,227 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%- include ("../partials/header.ejs") %>
-</head>
+	<head>
 
-<body>
+		<title>Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="./css/main.css" id="style-link">
+		<meta charset="utf-8">
 
-  <%- include ("../partials/nav.ejs") %>
+	</head>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started on Heroku with Node.js</h1>
-    <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started on Heroku with Node.js</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
+	<body>
 
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/main/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started on Heroku with Node.js</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
+	<div id="wrapper">
+
+	<a href="#" class="go-to-top"></a>
+
+	<div id="rect1" class="rect"></div>
+	<div id="rect2" class="rect"></div>
+	<div id="rect3" class="rect"></div>
+
+	<div id="container">
+
+		<header id="header">
+			<img src="imgs/logo.png" draggable="false">
+			<ul>
+				<li><a onclick="link('home')" class="home-link">Home</a></li>
+				<!-- <li id="projects-links-container"><a onclick="link('')">Projetos</a></li> -->
+				<li><a onclick="link('js')">Projetos</a></li>
+				<!-- <li><a onclick="link('php')">PHP</a></li> -->
+				<li><span class="burguer"></span></li>
+			</ul>
+		</header>
+
+		<div id="sidebar-container">
+			
+			<ul>
+				<li>					
+					<h5>Enable Load Animation</h5>
+					<input type="checkbox" id="animation-check-input">
+				</li>
+				<li>					
+					<h5>Enable Blue Theme</h5>
+					<input type="checkbox" id="bluish-check-input">
+				</li>
+			</ul>
+
+		</div>
+
+		<section id="bg-img">
+			<img src="imgs/bg-img.png" id="back-img" draggable="false">
+		</section>
+		
+		<div id="foto-img">
+			<img src="imgs/foto.png" id="profile-img">
+		</div>
+
+		<section id="content">
 
 
-</body>
+			<h1 class="sobre-h1">Breve descrição</h1>
+			<p class="sobre-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+
+			<h1 class="h1-projetos">Projetos</h1>
+
+			<div id="projs-thumb">
+				<div id="proj" class="proj1">
+					<img src="imgs/projs/proj1.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Dark/light Mode</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+				<div id="proj" class="proj2">
+					<img src="imgs/projs/proj2.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Sistema de login</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+				<div id="proj" class="proj3">
+					<img src="imgs/projs/proj3.png" class="proj-item" draggable="false">
+					<h2 class="proj-item">Efeito parallax</h2>
+					<p class="proj-item">Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido e qual o seu intuito. Mini descrição sobre o que se trata o projeto e/ou como foi desenvolvido.</p>
+					<a onclick="link('projetos')" class="proj-item">Ver mais</a>
+				</div>
+
+			</div>
+
+			
+			<h1 class="misc-heading">Esclarecimentos finais</h1>
+
+			<div id="misc">
+				<div class="img-container">
+					<!-- <img src="imgs/misc.png"> -->
+				</div>
+				<h1>Sobre mim</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio magni, consequatur minima tempore Omnis laudantium architecto sequi nisi asperiores eaque eveniet perspiciatis laboriosam minus in doloremque iste, itaque culpa, aspernatur!</p>
+			</div>
+
+		</section>
+
+	</div>
+
+	<section id="content-projetos">
+		
+		<h1 class="projetos-main-h1">Projetos</h1>
+
+		<div id="projeto1" class="projeto-box">
+			<iframe src="frames/js/projeto1/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Modo escuro/claro</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+		
+		<div id="projeto4" class="projeto-box">
+			<iframe src="frames/js/projeto4/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Gerenciador de despesas</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+		<div id="projeto3" class="projeto-box">
+			<iframe src="frames/js/projeto3/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Efeito Parallax</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+		<div id="projeto2" class="projeto-box">
+			<iframe src="frames/js/projeto2/index.html" frameborder="none"></iframe>	
+			<h1 class="projeto-title">Sistema de login (com local storage)</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+		
+		<div id="projeto5" class="projeto-box external-project last-project">
+			<div class="redirect-div">
+				<h2>Este projeto é muito extenso, clique no link abaixo para ter uma melhor visualização dele..</h2>
+				<a href="#" class="redirect-link">Ir para o projeto</a>
+			</div>	
+			<h1 class="projeto-title">Perfil project</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+
+	</section>
+	
+	<!-- <section id="content-php">
+		
+		<h1 class="php-main-heading">Projetos em PHP</h1>
+
+		<div id="php-projs-container">
+			
+			<div class="php-project">
+				
+				<iframe src="frames/php/projeto1/index.php" frameborder="none"></iframe>
+
+				<h1 class="php-project-title">Calculadora</h1>
+
+				<p class="php-project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+
+			</div>
+
+			<div class="php-project">
+				
+				<iframe src="frames/php/projeto2/index.php" frameborder="none"></iframe>
+
+				<h1 class="php-project-title">Calculadora fatorial</h1>
+
+				<p class="php-project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+
+			</div>
+
+			<div class="php-project">
+				
+				<iframe src="frames/php/projeto2/index.php" frameborder="none"></iframe>
+
+				<h1 class="php-project-title">Outro projeto</h1>
+
+				<p class="php-project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+
+			</div>
+
+		</div>
+		
+	</section> -->
+
+
+	<script src="./scripts/app.js"></script>
+	
+	</div>
+
+	</body>
+
 </html>

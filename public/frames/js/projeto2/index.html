@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+	<html>
+		
+		<head>
+			
+			<title>Password</title>
+				
+			<link rel="stylesheet" href="style.css">
+
+			<link href="https://fonts.googleapis.com/css?family=Anton|Kanit|Suez+One&display=swap" rel="stylesheet">
+
+		</head>
+		
+		<body id="body">	
+		
+		<div id="wrapper">
+
+			<div class="container">
+
+				<img src="userimg.jpg" id="userimg">
+					<input type="text" id="imglink" placeholder="Link da foto.." autocomplete="off" spellcheck="off">			
+
+				<div class="box">
+						
+					<h1>Register</h1>
+
+
+						<h2 id="username">Username</h2>
+
+							<input type="text" id="user-register" autocomplete="off" spellcheck="false">
+
+
+
+						<h2 id="password">Password</h2>
+
+							<input type="password" id="senha-register" autocomplete="off" spellcheck="false">
+
+
+					<button type="submit" onclick="register()">Submit</button>
+
+
+					<h3 id="result"></h3>
+
+				</div>
+
+				<div class="box2">
+						
+					<h1>Login</h1>
+
+
+						<h2 id="username">Username</h2>
+
+							<input type="text" id="user-login" autocomplete="off" spellcheck="false">
+
+
+
+						<h2 id="password">Password</h2>
+
+							<input type="password" id="senha-login" autocomplete="off" spellcheck="false">
+
+
+					<button type="submit" onclick="login()">Submit</button>
+
+
+					<h3 id="result"></h3>
+
+				</div>
+			
+			</div>
+
+			<script>
+				
+					const userImg = document.getElementById("userimg")
+					const linkInput = document.getElementById("imglink")
+					const logBox = document.getElementsByClassName("box2")[0]
+					const regBox = document.getElementsByClassName("box")[0]
+
+
+					var visitas = localStorage.getItem("visitas")
+					if (visitas == null) {visitas = 0}
+					localStorage.setItem("visitas", Number(visitas)+1)
+
+
+						var local = localStorage
+					
+					function register(){
+
+						var senhaReg, userReg
+
+
+
+						senhaReg = document.getElementById("senha-register").value
+						userReg = document.getElementById("user-register").value
+
+						if(senhaReg != "" && userReg != ""){
+
+							localStorage.setItem("user1", userReg)
+							localStorage.setItem("pass1", senhaReg)
+
+							var atualLength = (localStorage.length).toString()
+
+
+							local.setItem("user" + atualLength, userReg) 
+								
+							local.setItem("pass" + atualLength, senhaReg) 
+
+							regComplete()
+							
+						}else{
+							alert("Preencha os campos corretamente!")
+						}
+
+						
+
+
+					}
+
+					function regComplete(){
+						regBox.parentNode.removeChild(regBox)
+						logBox.style.opacity = "1"
+						logBox.style.pointerEvents = "all"
+						logBox.style.zIndex = "100"
+					}
+
+					function login(){
+
+						var senhaLog, userLog
+
+						senhaLog = document.getElementById("senha-login").value
+						userLog = document.getElementById("user-login").value
+
+						var logResult = ""
+						var logSuccess = ""
+						
+						for(let i = 0; i < localStorage.length;i++){
+							if((senhaLog == localStorage.getItem("pass"+i)) && (userLog == localStorage.getItem("user"+i)) ){
+								logSuccess = true
+							}else{
+								logResult = false
+							}
+						}
+						if(logResult == false && logSuccess != true){
+							alert("Login Errado!")
+						}
+						if(logSuccess == true){
+							alert("Login Correto!!!")
+						}
+
+					}
+
+					linkInput.onchange = function (){
+						var link = linkInput.value
+						localStorage.setItem("imglink", link)
+						if (localStorage.getItem("imglink") == null) {
+							userImg.src = link
+						}else{
+							userImg.src = localStorage.getItem("imglink")
+						}
+
+
+						function imageExists(url, callback) {
+							userImg.onload = function() {callback(true)}
+							userImg.onerror = function() {callback(false)}
+							userImg.src = url
+						}
+
+						var imageUrl = localStorage.getItem("imglink")
+						imageExists(imageUrl, function(exists) {
+							if (exists == false) {
+								userImg.src = "userimg.jpg"
+							}
+						})
+
+
+					}
+
+					window.onload = function(){
+						if (localStorage.getItem("imglink") == null) {
+							userImg.src = "userimg.jpg"
+						}else{
+							userImg.src = localStorage.getItem("imglink")
+						}
+						
+						//Remove a marca d'agua kkkk
+							childs = document.body.children
+
+							if (childs.length > 2) {
+								for(i=3 ; i>=1 ; i--){
+									document.body.removeChild(childs[i])
+								}
+							}
+					}
+
+			</script>
+        
+        </div>
+
+		</body>
+		
+	</html>
+			

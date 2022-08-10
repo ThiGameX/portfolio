@@ -1,0 +1,257 @@
+*{
+	text-decoration: none;
+	list-style: none;
+	font-family: arial;
+	color: var(--main-color);
+	box-sizing: border-box;
+}
+*::selection{
+	background-color: #f1f1f1;
+	color: #242424;
+}
+
+a{cursor: pointer;}
+input::-webkit-inner-spin-button{display: none;}
+
+:root{
+  --main-color: rgba(212,212,212,.8);
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+}
+::-webkit-scrollbar-thumb{
+	background-color: rgba(20,120,160,1);
+	border-radius: 4px;
+}
+::-webkit-scrollbar-track{
+	background-color: rgba(20,20,20,1);
+}
+
+body{
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	background: #0e0e0e;
+}
+
+#container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 900px;
+	height: 500px;
+	margin-bottom: 40px;
+	background-color: rgba(36,36,36,.9);
+	padding: 20px; 
+	/*grid*/
+	display: grid;
+	grid-template-areas: "stored transac" 
+						 "addt transac";
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+#box-stored-values{
+	grid-area: stored;
+}
+#box-stored-values #values-container{
+	display: grid;
+	grid-template-areas: "stored-sec1 stored-sec1" 
+						 "stored-sec2 stored-sec3";
+	grid-template-rows: 50% 50%;
+	grid-template-columns: 50% 50%;
+}
+#box-stored-values #values-container #stored-saldo{
+	grid-area: stored-sec1;
+}
+#box-stored-values #values-container #stored-ganho{
+	grid-area: stored-sec2;
+}
+#box-stored-values #values-container #stored-despesas{
+	grid-area: stored-sec3;
+}
+#box-stored-values .values-section{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#box-stored-values .values-section h3,
+#box-stored-values .values-section h2{
+	margin: 0;
+	padding: 2px;
+}
+
+
+#box-add-transacitons{
+	grid-area: addt;
+	position: relative;
+	min-height: 220px;
+}
+#box-add-transacitons h2{
+	margin: 6px;
+	padding: 0;
+}
+#box-add-transacitons fieldset{
+	margin: 4px 10px 10px 10px;
+	border: 2px solid auto;
+	border-radius: 4px;
+}
+#box-add-transacitons fieldset legend{
+	font-size: 18px;
+	font-weight: bold;
+}
+#box-add-transacitons fieldset input{
+	width: 100%;
+	height: 24px;
+	background-color: rgba(20,20,20,.4);
+	border: none;
+	box-shadow: none;
+	outline: none;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 4px;
+}
+#box-add-transacitons button{
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%,50%);
+	background-color: rgba(24,144,168,.55);
+	outline: none;
+	border: none;
+	border-radius: 6px;
+	color: rgba(240,240,240,.9);
+	color: white;
+	box-shadow: 0 0 2px 2px rgba(24,144,168,.55);
+	font-size: 20px;
+	cursor: pointer;
+	transition: .12s ease-in-out;
+}
+#box-add-transacitons button:hover{
+	background-color: rgba(24,160,204,1);
+	box-shadow: 0 0 2px 2px rgba(24,160,204,1);
+}
+
+
+#box-stored-transacitons{
+	grid-area: transac;
+}
+#transactions-list{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	min-height: 50px;
+	margin-bottom: 30px;
+	overflow-y: auto;
+	background-color: rgba(80,80,80,1);
+}
+.transactions-item{
+	position: relative;
+	margin: 6px 0 6px 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	display: flex;
+}
+.transactions-item:nth-child(1){margin-top: 20px;}
+.transactions-item:last-child{margin-bottom: 20px;}
+
+.transactions-item div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 95%;
+	background-color: rgba(120,120,120,.8);
+}
+.transactions-item div h3{
+	color: rgba(220,220,220,.8);
+	font-size: 16px;
+	display: inline;
+	margin: 8px;
+	padding: 0;
+}
+.transactions-item div span{
+	margin-right: 8px;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.transactions-item div .plus{
+	color: green;
+	text-shadow: 0 0 12px green;
+}
+.transactions-item div .minus{
+	color: red;
+	text-shadow: 0 0 5px rgba(240,10,10,.4);
+}
+
+.transactions-item .close-button{
+	position: relative;
+	top: 16px;
+	left: 20px;
+	transform: translate(-50%,-50%);
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	background-color: rgba(200,40,40,.1);
+	transition: .3s ease-in-out;
+}
+.transactions-item .close-button:hover{
+	background-color: rgba(200,40,40,.8);
+}
+
+.transactions-item .close-button:before,
+.transactions-item .close-button:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 11%;
+	height: 100%;
+	background-color: rgba(200,40,40,.4);
+	transition: .3s ease-in-out;
+}
+.transactions-item .close-button:before{transform: translate(-50%,-50%) rotate(45deg);}
+.transactions-item .close-button:after{transform: translate(-50%,-50%) rotate(-45deg);}
+
+.transactions-item .close-button:hover:before,
+.transactions-item .close-button:hover:after{
+	background-color: rgba(220,220,220,.6);
+}
+
+.title{
+	color: rgba(240,240,240,1);
+	text-shadow: 0 0 24px white;
+	text-align: center;
+}
+
+.gray-bg{
+	background-color: rgba(60,60,60,.9);
+}
+
+#saldo-value{
+	color: rgba(12,120,240,1);
+}
+#ganho-value{
+	color: rgba(0,120,0,1);
+}
+#despesas-value{
+	color: rgba(120,0,0,1);
+}
+
+@media (max-width: 900px) {
+	#container{
+		top: 30px;
+		transform: translate(-50%,0);
+		grid-template-areas: "stored" "addt" "transac";	
+		grid-template-rows: 1fr;
+		grid-template-columns: 100%;
+		width: 90%;
+		height: auto;
+	}
+}

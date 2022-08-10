@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PopUp</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Fugaz+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="wrapper">
+
+	<nav id="headnav">
+		<ul>
+			<li class="navitem">Home</li>
+			<li class="navitem">About</li>
+			<li class="navitem" onclick="pop()">Contact</li>
+		</ul>
+	</nav>
+
+	<div id="popup">
+		<h1>PopUp Title</h1>
+		<p style="font-size: 14px; margin-top: -20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat.</p>
+		<button onclick="popOut()">X</button>
+	</div>
+
+	<img src="img1.jpg" id="bg-img">
+	<div id="base"></div>
+
+			<section>
+				
+				<div id="sec1">
+					<h1 id="para">Parallax</h1>
+				</div>
+
+				<div id="sec2">
+						
+					<h2>The Parallax Effect</h2>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+
+			</section>
+
+
+			<script type="text/javascript">
+
+				
+				// pixels + " = 50% da tela e " + percent + " = " + pixels + "px"
+				
+				const bgimg = document.getElementById("bg-img")
+				const txt = document.getElementById("para")
+				const html = document.getElementsByTagName("html")[0]
+				const base = document.getElementById("base")
+
+				window.onbeforeunload = function () {
+					var pagey = window.pageYOffset
+					window.scrollTo(0, 0);
+				}
+
+
+				window.onscroll = function(){
+
+					var y = window.pageYOffset
+					bgimg.style.marginTop = y * 0.5 + "px"
+
+
+					// var mt = Number((txt.style.marginTop).replace("px", ""))
+					// if (mt < 500) {
+					// 	txt.style.marginTop = y * 1.5 + "px"
+					// }else{
+					// 	txt.style.marginTop = mt - 50 + "px"
+					// }
+
+				}
+
+				const header = document.getElementById("headnav")
+				const popup = document.getElementById("popup")
+				const contBtn = header.getElementsByClassName("navcontact")[0]
+
+				function pop(){
+					popup.style.display = "block"
+
+				}
+				function popOut(){
+					popup.style.display = "none"
+				}
+				
+				window.onload = function(){
+					//Remove a marca d'agua kkkk
+						childs = document.body.children
+
+						if (childs.length > 2) {
+							for(i=3 ; i>=1 ; i--){
+								document.body.removeChild(childs[i])
+							}
+						}
+				}
+
+			</script>
+    </div>
+    
+</body>
+</html>

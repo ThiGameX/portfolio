@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+	<html>
+		
+		<head>
+			
+			<title>Calculator</title>
+				
+			<link rel="stylesheet" href="style.css">
+			<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	
+		</head>
+		
+		<body id="body">
+        
+        <div id="wrapper">
+
+			<div class="box" id="box">
+				
+				<h1>Dark/Light mode</h1>
+				<p id="p">Aperte o botão para trocar entre o tema claro e o escuro!</p>
+
+				<div class="check">
+					<input onclick="change()" type="checkbox" name="check" id="checkbox" />
+					<div class="button"></div>
+					<div class="circle"></div>
+				</div>
+
+			</div>
+
+			<script>
+					
+				checked = "off"
+
+				function change(){
+					bgGrey = "rgba(20,20,20,.6)"
+					bgBlack = "rgba(4,4,4,1)"
+					colorWhite = "rgba(210,210,210,.8)"
+
+					bgBox = "rgba(200,200,200,.6)"
+					bgWhite = "rgba(240,240,240,1)"
+					colorGrey = "rgba(24,24,24,.75)"
+
+					if (checked == "off"){
+							document.getElementById("body").style.backgroundColor = bgBlack
+							document.getElementById("box").style.backgroundColor = bgGrey
+							document.getElementById("p").style.color = colorWhite
+						checked = "on"
+					}else{
+							document.getElementById("body").style.backgroundColor = bgWhite
+							document.getElementById("box").style.backgroundColor = bgBox
+							document.getElementById("p").style.color = colorGrey
+						checked = "off"
+					}
+				}
+				
+				window.onload = function(){
+					//Remove a marca d'agua kkkk
+						childs = document.body.children
+
+						if (childs.length > 2) {
+							for(i=3 ; i>=1 ; i--){
+								document.body.removeChild(childs[i])
+							}
+						}
+				}
+
+			</script>
+			
+		</div>
+
+		</body>
+		
+	</html>
+			
